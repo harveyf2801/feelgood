@@ -7,10 +7,10 @@
       </a>
       <nav>
         <ul role="list" class="nav-links" aria-label="primary links">
-          <li><a href="/#home" data-page="Home">Home</a></li>
-          <li><a href="fitness.html" data-page="Fitness">Fitness</a></li>
-          <li><a href="/#dieting" data-page="Dieting">Dieting</a></li>
-          <li><a href="/#wellbeing" data-page="Wellbeing">Wellbeing</a></li>
+          <li><a href="#home" data-page="Home">Home</a></li>
+          <li><a href="{{ '/fitness.html' | relative_url }}" data-page="Fitness">Fitness</a></li>
+          <li><a href="#dieting" data-page="Dieting">Dieting</a></li>
+          <li><a href="#wellbeing" data-page="Wellbeing">Wellbeing</a></li>
       </nav>
-      <a class="login-btn" href="login.html">Login</a>
+      <a class="login-btn" href="{{ '/login.html' | relative_url }}">Login</a>
     </header>
