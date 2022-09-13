@@ -1,0 +1,11 @@
+name: FeelGood
+markdown: kramdown
+
+url: https://harveyf2801.github.io/feelgood
+baseurl: /feelgood
+
+include: ['_pages']
+
+sass:
+  sass_dir: _sass
+  style: compact # possible values: nested expanded compact compressed
