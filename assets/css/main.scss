@@ -4,3 +4,442 @@
 ---
 
 @import "reset";
+
+/*
+- COLOURS
+
+STARK WHITE
+Light shades
+Use this color as the background for your dark-on-light designs, or the text color of an inverted design.
+
+GLACIER
+Light accent
+Accent colors can be used to bring attention to design elements by contrasting with the rest of the palette.
+
+FALCON
+Main brand color
+This color should be eye-catching but not harsh. It can be liberally applied to your layout as its main identity.
+
+SHIP COVE
+Dark accent
+Another accent color to consider. Not all colors have to be used - sometimes a simple color scheme works best.
+
+CELLO
+Dark shades
+Use as the text color for dark-on-light designs, or as the background for inverted designs.
+
+- FONTS
+
+ROBOTO
+Used for first 3 header tags and all buttons / large writing.
+
+MONTSERRAT
+Used for last 3 header taggs and all paragraph / small writing.
+*/
+
+&:root {
+	--light-shades: 231, 218, 193;
+	--light-accent: 129, 175, 198;
+	--main-brand-color: 111, 90, 104;
+	--dark-accent: 103, 143, 181;
+	--dark-shades: 29, 46, 91;
+	--overlay-color: 0, 0, 0, 0.85;
+	--menu-speed: 1s;
+}
+.material-symbols-outlined {
+	font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 48;
+}
+body {
+	overflow-x: hidden;
+	font-family: 'Roboto', sans-serif;
+	font-size: 62.5%;
+	background: rgb(var(--light-shades));
+	color: rgb(var(--dark-shades));
+	font-size: 1.2rem;
+}
+html {
+	overflow-x: hidden;
+	font-family: 'Roboto', sans-serif;
+	font-size: 62.5%;
+}
+* {
+	scroll-behavior: smooth;
+	overflow-y: scroll;
+	-ms-overflow-style: none;
+	scrollbar-width: none;
+	&::-webkit-scrollbar {
+		display: none;
+	}
+}
+h1 {
+	font-family: 'Roboto', sans-serif;
+	color: rgb(var(--main-brand-color));
+	font-size: 2.5rem;
+}
+h2 {
+	font-family: 'Roboto', sans-serif;
+	color: rgb(var(--main-brand-color));
+	font-size: 2.5rem;
+}
+h3 {
+	font-family: 'Roboto', sans-serif;
+	color: rgb(var(--main-brand-color));
+	font-size: 2.5rem;
+}
+p {
+	font-family: 'Montserrat', sans-serif;
+	color: rgb(var(--dark-shades));
+	font-size: 1.8rem;
+}
+h4 {
+	font-family: 'Montserrat', sans-serif;
+	color: rgb(var(--dark-shades));
+	font-size: 1.8rem;
+}
+h5 {
+	font-family: 'Montserrat', sans-serif;
+	color: rgb(var(--dark-shades));
+	font-size: 1.8rem;
+}
+h6 {
+	font-family: 'Montserrat', sans-serif;
+	color: rgb(var(--dark-shades));
+	font-size: 1.8rem;
+}
+a {
+	text-decoration: none;
+}
+b {
+	font-weight: bold;
+}
+.nav-bar {
+	height: 6%;
+	width: 100%;
+	position: fixed;
+	top: 0;
+	z-index: 2;
+	overflow: hidden;
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: space-between;
+	align-items: center;
+	text-align: center;
+	font-weight: 300;
+	transition: all 300ms ease;
+}
+.nav-links {
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: space-evenly;
+	align-items: center;
+	a {
+		padding: 0 3rem 0 3rem;
+		color: rgb(var(--light-shades));
+		font-size: 1.2rem;
+		flex: 1 1 0px;
+		&:hover {
+			opacity: 0.8;
+			filter: brightness(85%);
+			transition: all 1s ease;
+		}
+	}
+}
+.login-btn {
+	&:hover {
+		opacity: 0.8;
+		filter: brightness(85%);
+		transition: all 1s ease;
+	}
+	color: rgb(var(--light-shades));
+	font-size: 1.25rem;
+	padding: 0 3rem 0 3rem;
+}
+.logo {
+	height: 2.5rem;
+	width: 2.5rem;
+	margin: 0 3rem 0 3rem;
+}
+.frosted-opaque {
+	background-color: rgba(var(--overlay-color));
+	backdrop-filter: saturate(180%) blur(20px);
+}
+.scroll-down {
+	header {
+		transform: translate3d(0, -100%, 0);
+	}
+}
+.scroll-up {
+	header {
+		filter: drop-shadow(0 -10px 20px rgba(var(--overlay-color)));
+	}
+}
+.hero-container {
+	height: 100vh;
+	top: 0;
+}
+.hero {
+	height: 100%;
+	top: 0;
+	background-color: rgba(0, 0, 0, 0.4);
+	background-blend-mode: darken;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	position: relative;
+	background-attachment: fixed;
+	h1 {
+		font-size: 7rem;
+		font-weight: 600;
+		width: 100%;
+		color: rgb(var(--light-shades));
+		text-shadow: black 0 0 0.09em;
+	}
+	h2 {
+		font-size: 4rem;
+		font-weight: 500;
+		text-shadow: black 0 0 0.09em;
+	}
+	p {
+		font-size: 1.8rem;
+		width: 100%;
+		color: rgb(var(--light-shades));
+		text-shadow: black 0 0 0.09em;
+	}
+}
+#home {
+	background-image: url("../images/hero/main.jpg");
+}
+#fitness {
+	background-image: url("../images/hero/fitness.jpg");
+}
+#dieting {
+	background-image: url("../images/hero/dieting.jpg");
+}
+#wellbeing {
+	background-image: url("../images/hero/wellbeing.jpg");
+}
+#fitness2 {
+	background-image: url("../images/hero/create-workout.jpg");
+}
+#fitness3 {
+	background-image: url("../images/hero/choose-workout.jpg");
+}
+.blur {
+	backdrop-filter: saturate(100%) blur(3px);
+	background: rgba(31, 31, 31, 0.4);
+	transition: all 300ms ease-in;
+	&:hover {
+		backdrop-filter: saturate(150%) blur(10px);
+	}
+}
+.snapping-container {
+	scroll-snap-type: y mandatory;
+}
+.snapping-section {
+	scroll-snap-align: start;
+	scroll-snap-stop: always;
+}
+.full-screen {
+	height: 100vh;
+	width: 100vw;
+}
+.full-height {
+	height: 100%;
+}
+.full-width {
+	width: 100%;
+}
+.container {
+	text-align: center;
+	display: flex;
+	flex-flow: column nowrap;
+	justify-content: center;
+	align-items: center;
+}
+.row {
+	flex-flow: row nowrap;
+	justify-content: space-evenly;
+}
+.wrap {
+	flex-wrap: wrap;
+}
+.item {
+	flex: 1 1 0px;
+}
+input {
+	width: 30rem;
+	padding: 1rem 2rem;
+	margin-top: 1.5rem;
+	border: none;
+	border-bottom: 2px black solid;
+	background-color: transparent;
+	transition: all 300ms ease;
+	&:focus {
+		outline: none;
+		background-color: rgba(var(--overlay-color));
+		border-radius: 0.4em;
+		color: rgb(var(--light-shades));
+	}
+	&:invalid {
+		color: rgb(154, 62, 62);
+	}
+}
+select {
+	width: 30rem;
+	padding: 1rem 2rem;
+	margin-top: 1.5rem;
+	border: none;
+	border-bottom: 2px black solid;
+	background-color: transparent;
+	transition: all 300ms ease;
+	&:focus {
+		outline: none;
+		background-color: rgba(var(--overlay-color));
+		border-radius: 0.4em;
+		color: rgb(var(--light-shades));
+	}
+}
+.tracker {
+	font-size: 1.4rem;
+	border-collapse: collapse;
+	width: 60rem;
+	th {
+		font-size: 1.15em;
+		text-align: left;
+		font-weight: normal;
+		color: rgb(var(--light-shades));
+		background: rgb(var(--main-brand-color));
+		padding: 0.75rem;
+	}
+	td {
+		padding: 0.75rem;
+	}
+}
+.tracker-entries {
+	.tracker-row {
+		background: rgb(226, 226, 226);
+		&:nth-child(odd) {
+			background: rgb(199, 199, 199);
+		}
+	}
+}
+.tracker-date {
+	display: inline-block;
+	box-sizing: border-box;
+	font-size: 1em;
+	height: 2.5em;
+	padding: 0.5em 0;
+	border: none;
+	outline: none;
+	background: none;
+}
+.tracker-workout {
+	display: inline-block;
+	box-sizing: border-box;
+	font-size: 1em;
+	height: 2.5em;
+	padding: 0.5em 0;
+	border: none;
+	outline: none;
+	background: none;
+}
+.tracker-duration {
+	display: inline-block;
+	box-sizing: border-box;
+	font-size: 1em;
+	height: 2.5em;
+	padding: 0.5em 0;
+	border: none;
+	outline: none;
+	background: none;
+	width: 5em;
+	text-align: right;
+}
+.tracker-button {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: none;
+	border: none;
+	outline: none;
+	color: red;
+	font-size: 1.5em;
+	margin: 0.5em;
+	cursor: pointer;
+	&:hover {
+		color: rgba(255, 0, 0, 0.3);
+	}
+}
+.tracker-row-add {
+	border-top: 3px solid grey;
+	border-bottom: 3px solid grey;
+	background: white;
+	td {
+		text-align: right;
+	}
+}
+.tracker-add {
+	display: inline-block;
+	padding: 0.8em 1em;
+	color: green;
+	cursor: pointer;
+	&:hover {
+		color: rgba(0, 255, 0, 0.3);
+	}
+}
+.btn {
+	display: inline-flex;
+	font-weight: 400;
+	font-size: 1.6rem;
+	padding: 1rem 2rem;
+	margin-top: 3rem;
+	margin-bottom: 3rem;
+	border-radius: 0.21em;
+	&:hover {
+		cursor: pointer;
+		opacity: 0.9;
+		filter: brightness(108%);
+		transition: all 1s ease;
+	}
+	&:active {
+		cursor: pointer;
+		opacity: 1;
+		filter: brightness(88%);
+		transition: all 100ms ease;
+	}
+	&:hover.outline {
+		opacity: 0.6;
+	}
+}
+.filled {
+	border: none;
+	background-color: rgb(var(--main-brand-color));
+	color: rgb(var(--light-shades));
+}
+.outline {
+	border: 0.2rem solid rgb(var(--light-shades));
+	color: rgb(var(--light-shades));
+	background-color: transparent;
+}
+.no-outline {
+	border: none;
+	color: rgb(var(--main-brand-color));
+}
+#tool-tip {
+	display: none;
+	position: relative;
+	padding: 2.0rem;
+	margin-top: 1.0rem;
+	text-align: left;
+	h4 {
+		font-size: 1.2rem;
+	}
+	p {
+		font-size: 1.0rem;
+	}
+}
+.valid {
+	b {
+		color: rgb(6, 124, 6);
+	}
+}
