@@ -4,46 +4,44 @@ permalink: /signup.html
 title: Sign Up | FeelGood
 ---
         <main>
-            <div class="full-screen container snapping-container">
-                <form action="#" method="GET">
-                    <!-- Sign up form section -->
-                    <div class="full-screen container snapping-section" id="sign-up">
-                        <h1>Sign Up</h1>
-                        <input id="fname" type="text" pattern="[a-zA-Z]*" placeholder="Firstname" required>
-                        <input id="lname" type="text" pattern="[a-zA-Z]*" placeholder="Lastname" required>
-                        <input id="bday" type="date" placeholder="Birthday" onblur="checkDOB()" required>
-                        <input id="email" type="email" placeholder="Email" required>
-                        <input id="passw" type="password" placeholder="Password" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required>
+            <form action="#" method="GET">
+                <!-- Sign up form section -->
+                <div class="full-screen snapping-section container" id="sign-up">
+                    <h1>Sign Up</h1>
+                    <input id="fname" type="text" pattern="[a-zA-Z]*" placeholder="Firstname" required>
+                    <input id="lname" type="text" pattern="[a-zA-Z]*" placeholder="Lastname" required>
+                    <input id="bday" type="date" placeholder="Birthday" onblur="checkDOB()" required>
+                    <input id="email" type="email" placeholder="Email" required>
+                    <input id="passw" type="password" placeholder="Password" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required>
 
-                        <div id="tool-tip">
-                            <h4>Password must contain the following:</h3>
-                            <p id="letter" class="invalid">A <b>lowercase</b> letter</p>
-                            <p id="capital" class="invalid">A <b>capital (uppercase)</b> letter</p>
-                            <p id="number" class="invalid">A <b>number</b></p>
-                            <p id="length" class="invalid">Minimum <b>8 characters</b></p>
-                        </div>
-                        <div>
-                            <a class="btn no-outline" href="{{ '/signup.html#about-you' | relative_url }}">
-                                <span class="material-symbols-outlined">expand_more</span>
-                            </a>
-                            <a class="btn no-outline" href="{{ '/login.html' | relative_url }}">Already got an account?</a>
-                        </div>
+                    <div id="tool-tip">
+                        <h4>Password must contain the following:</h3>
+                        <p id="letter" class="invalid">A <b>lowercase</b> letter</p>
+                        <p id="capital" class="invalid">A <b>capital (uppercase)</b> letter</p>
+                        <p id="number" class="invalid">A <b>number</b></p>
+                        <p id="length" class="invalid">Minimum <b>8 characters</b></p>
                     </div>
-
-                    <!-- About you form section -->
-                    <div class="full-screen container snapping-section" id="about-you">
-                        <a class="btn no-outline" href="{{ '/signup.html#sign-up' | relative_url }}">
-                            <span class="material-symbols-outlined">expand_less</span>
+                    <div>
+                        <a class="btn no-outline" href="{{ '/signup.html#about-you' | relative_url }}">
+                            <span class="material-symbols-outlined">expand_more</span>
                         </a>
-                        <h1>About You</h1>
-                        <input id="bodyweight" type="number" placeholder="Weight (kg)" min="2" max="1000" required>
-                        <input id="height" type="number" placeholder="Height (cm)"  min="20" max="400" required>
-                        <select id="unit" onchange="changeUnit()">
-                            <option value="metric">Metric</option>
-                            <option value="imperial">Imperial</option>
-                        </select>
-                        <button type="submit" value="Submit" class="btn filled">Sign Up</button>
+                        <a class="btn no-outline" href="{{ '/login.html' | relative_url }}">Already got an account?</a>
                     </div>
-                </form>
-            </div>
+                </div>
+
+                <!-- About you form section -->
+                <div class="full-screen snapping-section container" id="about-you">
+                    <a class="btn no-outline" href="{{ '/signup.html#sign-up' | relative_url }}">
+                        <span class="material-symbols-outlined">expand_less</span>
+                    </a>
+                    <h1>About You</h1>
+                    <input id="bodyweight" type="number" placeholder="Weight (kg)" min="2" max="1000" required>
+                    <input id="height" type="number" placeholder="Height (cm)"  min="20" max="400" required>
+                    <select id="unit" onchange="changeUnit()">
+                        <option value="metric">Metric</option>
+                        <option value="imperial">Imperial</option>
+                    </select>
+                    <button type="submit" value="Submit" class="btn filled">Sign Up</button>
+                </div>
+            </form>
         </main>
