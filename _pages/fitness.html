@@ -5,7 +5,7 @@ title: Fitness | FeelGood
 ---
     <main>
         <div class="full-screen container row">
-            <div class="item hero" id="fitness2">
+            <div class="item hero" style="background-image: url({{ '/assets/images/hero/create-workout.jpg' | relative_url}});">
                 <div class="full-height container blur">
                     <h2>Choose a workout</h2>
                     <p>Explore the selection of workouts provided by us.</p>
@@ -13,53 +13,56 @@ title: Fitness | FeelGood
             
                 </div>
             </div>
-            <div class="item hero" id="fitness3">
+            <div class="item hero" style="background-image: url({{ '/assets/images/hero/choose-workout.jpg' | relative_url}});">
                 <div class="full-height container blur">
                     <h2>Create a workout</h2>
                     <p>Choose from a selection of exercises to create a custom workout.</p>
-                    <a class="btn filled" href="#create">Create</a>
+                    <a class="btn filled" href="{{ '/fitness.html#create' | relative_url}}">Create</a>
                 </div>
             </div>
         </div>
-        <div class="full-screen container" id="app">
-            <h2>Create a workout that works for you</h2>
+        <div class="full-screen container" id="create">
+            <h3>Create a workout that works for you</h3>
+            <br>
+            <div id="app">
             <!-- <table class="tracker">
-                <thead>
-                    <tr>
-                        <th>Date</th>
-                        <th>Workout</th>
-                        <th>Duration</th>
-                        <th></th>
-                    </tr>
-                </thead>
-                <tbody class="tracker-entries">
-                    <tr class="tracker-row">
-                        <td>
-                            <input type="date" class="tracker-date">
-                        </td>
-                        <td>
-                            <select class="tracker-workout">
-                                <option value="walking">Walking</option>
-                                <option value="running">running</option>
-                                <option value="cycling">Cycling</option>
-                            </select>
-                        </td>
-                        <td>
-                            <input type="number" class="tracker-duration">
-                            <span class="tracker-text">minutes</span>
-                        </td>
-                        <td>
-                            <button type="button" class="tracker-button">&times;</button>
-                        </td>
-                    </tr>
-                </tbody>
-                <tbody>
-                    <tr class="tracker-row tracker-row-add">
-                        <td colspan="4">
-                            <span class="tracker-add">Add Entry &plus;</span>
-                        </td>
-                    </tr>
-                </tbody>
-            </table> -->
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Workout</th>
+                            <th>Duration</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody class="tracker-entries">
+                        <tr class="tracker-row">
+                            <td>
+                                <input type="date" class="tracker-date">
+                            </td>
+                            <td>
+                                <select class="tracker-workout">
+                                    <option value="walking">Walking</option>
+                                    <option value="running">running</option>
+                                    <option value="cycling">Cycling</option>
+                                </select>
+                            </td>
+                            <td>
+                                <input type="number" class="tracker-duration">
+                                <span class="tracker-text">minutes</span>
+                            </td>
+                            <td>
+                                <button type="button" class="tracker-button">&times;</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                    <tbody>
+                        <tr class="tracker-row tracker-row-add">
+                            <td colspan="4">
+                                <span class="tracker-add">Add Entry &plus;</span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table> -->
+            </div>
         </div>
     </main>
