@@ -3,65 +3,33 @@ layout: default
 permalink: /index.html
 title: FeelGood
 ---
-    <!-- Hero image with parallax effect -->
     <!-- Scroll snapping between hero images -->
-    <main class="hero-container snapping-container">
-      <div class="hero snapping-section container" id="home">
+    <main class="snapping-container hero-container">
+      <div class="hero snapping-section container" style="background-image: url({{ '/assets/images/hero/main.jpg' | relative_url}});" id="home">
         <h1>FeelGood</h1>
         <p>When you feel good, you look good</p>
-        <a class="btn filled" href="#fitness">Get Started</a>
+        <a class="btn filled" href="{{ '/#fitness' | relative_url}}">Get Started</a>
       </div>
 
-      <div class="hero snapping-section container" id="fitness">
+      <div class="hero snapping-section container" style="background-image: url({{ '/assets/images/hero/fitness.jpg' | relative_url}});" id="fitness">
         <h1>Fitness</h1>
         <p>Be somebody nobody thought you could be.</p>
-        <a class="btn outline" href="#dieting">
+        <a class="btn outline" href="{{ '/#dieting' | relative_url}}">
           <span class="material-symbols-outlined">expand_more</span>
         </a>
       </div>
 
-      <div class="hero snapping-section container" id="dieting">
+      <div class="hero snapping-section container" style="background-image: url({{ '/assets/images/hero/dieting.jpg' | relative_url}});" id="dieting">
         <h1>Dieting</h1>
         <p>Get fit in the gym, lose weight in the kitchen.</p>
-        <a class="btn outline" href="#wellbeing">
+        <a class="btn outline" href="{{ '/#wellbeing' | relative_url}}">
           <span class="material-symbols-outlined">expand_more</span>
         </a>
       </div>
 
-      <div class="hero snapping-section container" id="wellbeing">
+      <div class="hero snapping-section container" style="background-image: url({{ '/assets/images/hero/wellbeing.jpg' | relative_url}});" id="wellbeing">
         <h1>Wellbeing</h1>
         <p>Make yourself a priority.</p>
-        <a class="btn outline" href="{{ '/signup.html' | relative_url }}">Sign Up</a>
-      </div>
-    </main>
-    <!-- Hero image with parallax effect -->
-    <!-- Scroll snapping between hero images -->
-    <main class="hero-container snapping-container">
-      <div class="hero snapping-section container" id="home">
-        <h1>FeelGood</h1>
-        <p>When you feel good, you look good</p>
-        <a class="btn filled" href="#fitness">Get Started</a>
-      </div>
-
-      <div class="hero snapping-section container" id="fitness">
-        <h1>Fitness</h1>
-        <p>Be somebody nobody thought you could be.</p>
-        <a class="btn outline" href="#dieting">
-          <span class="material-symbols-outlined">expand_more</span>
-        </a>
-      </div>
-
-      <div class="hero snapping-section container" id="dieting">
-        <h1>Dieting</h1>
-        <p>Get fit in the gym, lose weight in the kitchen.</p>
-        <a class="btn outline" href="#wellbeing">
-          <span class="material-symbols-outlined">expand_more</span>
-        </a>
-      </div>
-
-      <div class="hero snapping-section container" id="wellbeing">
-        <h1>Wellbeing</h1>
-        <p>Make yourself a priority.</p>
-        <a class="btn outline" href="signup.html">Sign Up</a>
+        <a class="btn outline" href="{{ '/signup.html' | relative_url}}">Sign Up</a>
       </div>
     </main>
