@@ -1,10 +1,4 @@
 //______________________________________________________________________________________________________
-// - Constants and local variables
-const body = document.body;
-let today = new Date();
-
-
-//______________________________________________________________________________________________________
 // - Workout tracker
 import WorkoutTracker from "./WorkoutTracker.js";
 const app = document.getElementById("app");
@@ -13,9 +7,10 @@ const wt = new WorkoutTracker(app);
 
 window.wt = wt;
 
-
-
-
+//______________________________________________________________________________________________________
+// - Constants and local variables
+const body = document.body;
+let today = new Date();
 
 //______________________________________________________________________________________________________
 // - Check if the page has scrolled and either hide or display the nav bar
@@ -40,6 +35,37 @@ window.addEventListener('scroll', () => {
 
     lastScroll = currentScroll;
 })
+
+
+
+//______________________________________________________________________________________________________
+// - Clock Message depending on the time of day
+let newElement = document.createElement("h1")
+let currentHour = today.getHours();
+let greet;
+
+if (currentHour >= 4 && currentHour < 10) {
+    greet = "Good morning and welcome to FeelGood";
+} else if (currentHour >= 10 && currentHour < 12) {
+    greet = "Good day and welcome to FeelGood";
+} else if (currentHour >= 12 && currentHour < 18) {
+    greet = "Good afternoon and welcome to FeelGood";
+} else if (currentHour >= 18 && currentHour < 22) {
+    greet = "Good evening and welcome to FeelGood";
+} else if ((currentHour >= 22 && currentHour < 24) || (currentHour >= 0 && currentHour < 4)) {
+    greet = "It's getting late ... you should probably go to bed!";
+} else {
+    greet = ""
+};
+
+let createEleTxt = document.createTextNode(greet);
+newElement.appendChild(createEleTxt);
+
+body.appendChild(newElement);
+
+newElement.setAttribute("class", "filled");
+
+newElement.style.cssText = "text-align: center; font-size: 2rem";
 
 
 //______________________________________________________________________________________________________
@@ -83,38 +109,6 @@ function changeUnit() {
         height.max = 400;
     }
 }
-
-
-//______________________________________________________________________________________________________
-// - Clock Message depending on the time of day
-let newElement = document.createElement("h1")
-let currentHour = today.getHours();
-let greet;
-
-if (currentHour >= 4 && currentHour < 10) {
-    greet = "Good morning";
-} else if (currentHour >= 10 && currentHour < 12) {
-    greet = "Good day";
-} else if (currentHour >= 12 && currentHour < 18) {
-    greet = "Good afternoon";
-} else if (currentHour >= 18 && currentHour < 22) {
-    greet = "Good evening";
-} else if ((currentHour >= 22 && currentHour < 24) || (currentHour >= 0 && currentHour < 4)) {
-    greet = "Good night";
-} else {
-    greet = ""
-};
-
-greet = greet + ' and welcome to FeelGood';
-
-let createEleTxt = document.createTextNode(greet);
-newElement.appendChild(createEleTxt);
-
-body.appendChild(newElement);
-
-newElement.setAttribute("class", "filled");
-
-newElement.style.cssText = "text-align: center; font-size: 2rem";
 
 
 //______________________________________________________________________________________________________
@@ -168,33 +162,3 @@ var upperCaseLetters = /[A-Z]/g;
   }
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// Auto scroll
-/*
-const autoscroll = document.querySelectorAll(".auto-scroll");
-var autoscroll_index = 0;
-autoscroll[autoscroll_index].scrollIntoView();
-
-setInterval(function () {
-                        if (autoscroll_index >= autoscroll.length - 1) {
-                            autoscroll_index = 0;
-                        } else {
-                            autoscroll_index += 1;
-                        }
-                        autoscroll[autoscroll_index].scrollIntoView();
-                        }, 10000);
-*/
