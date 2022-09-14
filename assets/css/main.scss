@@ -37,142 +37,277 @@ MONTSERRAT
 Used for last 3 header taggs and all paragraph / small writing.
 */
 
-:root {
-	--light-shades: 231, 218, 193;
-	--light-accent: 129, 175, 198;
-	--main-brand-color: 111, 90, 104;
-	--dark-accent: 103, 143, 181;
-	--dark-shades: 29, 46, 91;
-	--overlay-color: 0, 0, 0, 0.85;
-	--menu-speed: 1s;
+/* Initialising variables */
+html {
+    /* 0.1rem == 1px */
+	font-size: 62.5%;
+	overflow-x: hidden;
+	height: 100%;
 }
+:root {
+    /* CONSTANTS */
+    /* Colours */
+	--clr-light-shades: rgb(231, 218, 193);
+	--clr-light-accent: rgb(129, 175, 198);
+	--clr-main-brand-color: rgb(111, 90, 104);
+	--clr-dark-accent: rgb(103, 143, 181);
+	--clr-dark-shades: rgb(29, 46, 91);
+	--clr-overlay: rgba(0, 0, 0, 0.85);
+	
+	/* Font families */
+	--font-family-primary: 'Roboto', sans-serif;
+	--font-family-secondary: 'Montserrat', sans-serif;
+	--font-family-body: var(--font-family-secondary);
+	--font-family-heading: var(--font-family-primary);
+	
+	/* Font weights */
+	--fw-light: 300;
+	--fw-semi-light: 400;
+	--fw-regular: 500;
+	--fw-semi-bold: 600;
+	--fw-bold: 800;
+	
+	/* Font sizes */
+	--fs-100: 1.3rem;
+	--fs-200: 1.4rem;
+	--fs-300: 1.5rem;
+	--fs-400: 1.6rem;
+	--fs-500: 1.8rem;
+	--fs-600: 2.0rem;
+	--fs-700: 3.0rem;
+	--fs-800: 4.0rem;
+	--fs-900: 5.6rem;
+	--fs-body: var(--fs-500);
+	--fs-primary-heading: var(--fs-800);
+	--fs-secondary-heading: var(--fs-700);
+	--fs-nav: var(--fs-500);
+	--fs-button: var(--fs-300);
+	
+	/* Timings */
+	--time-very-slow: 1s;
+	--time-slow: .5s;
+	--time-fast: .25s;
+}
+
+/* Google fonts Icons */
 .material-symbols-outlined {
 	font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 48;
 }
-body {
-	overflow-x: hidden;
-	font-family: 'Roboto', sans-serif;
-	font-size: 62.5%;
-	background: rgb(var(--light-shades));
-	color: rgb(var(--dark-shades));
-	font-size: 1.2rem;
+
+/* Hide scrollbar */
+::-webkit-scrollbar {
+	display: none;
 }
-html {
-	overflow-x: hidden;
-	font-family: 'Roboto', sans-serif;
-	font-size: 62.5%;
-}
-* {
-	scroll-behavior: smooth;
-	overflow-y: scroll;
+.body {
 	-ms-overflow-style: none;
 	scrollbar-width: none;
-	&::-webkit-scrollbar {
-		display: none;
-	}
+}
+
+/* Basic styling */
+body {
+	height: 100%;
+	min-height: 100vh;
+	max-width: 100vw;
+	font-style: normal;
+	background: var(--clr-light-shades);
+	color: var(--clr-dark-shades);
+	font-size: var(--fs-body);
+	font-weight: var(--fw-regular);
+	font-family: var(--font-family-body);
+	letter-spacing: normal;
+	white-space: wrap;
+}
+* {
+	color: var(--clr-dark-shades);
+	scroll-behavior: smooth;
 }
 h1 {
-	font-family: 'Roboto', sans-serif;
-	color: rgb(var(--main-brand-color));
-	font-size: 2.5rem;
+	font-family: var(--font-family-primary);
+	color: var(--clr-main-brand-color);
+	font-size: var(--fs-primary-heading);
 }
 h2 {
-	font-family: 'Roboto', sans-serif;
-	color: rgb(var(--main-brand-color));
-	font-size: 2.5rem;
+	font-family: var(--font-family-primary);
+	color: var(--clr-main-brand-color);
+	font-size: var(--fs-primary-heading);
 }
 h3 {
-	font-family: 'Roboto', sans-serif;
-	color: rgb(var(--main-brand-color));
-	font-size: 2.5rem;
-}
-p {
-	font-family: 'Montserrat', sans-serif;
-	color: rgb(var(--dark-shades));
-	font-size: 1.8rem;
+	font-family: var(--font-family-primary);
+	color: var(--clr-main-brand-color);
+	font-size: var(--fs-primary-heading);
 }
 h4 {
-	font-family: 'Montserrat', sans-serif;
-	color: rgb(var(--dark-shades));
-	font-size: 1.8rem;
+	font-family: var(--font-family-secondary);
+	color: var(--clr-dark-shades);
+	font-size: var(--fs-secondary-heading);
 }
 h5 {
-	font-family: 'Montserrat', sans-serif;
-	color: rgb(var(--dark-shades));
-	font-size: 1.8rem;
+	font-family: var(--font-family-secondary);
+	color: var(--clr-dark-shades);
+	font-size: var(--fs-secondary-heading);
 }
 h6 {
-	font-family: 'Montserrat', sans-serif;
-	color: rgb(var(--dark-shades));
-	font-size: 1.8rem;
+	font-family: var(--font-family-secondary);
+	color: var(--clr-dark-shades);
+	font-size: var(--fs-secondary-heading);
 }
+span {
+	color: inherit;
+}
+
+/* Buttons / Links */
 a {
 	text-decoration: none;
+	display: -webkit-inline-box;
+	display: -ms-inline-flexbox;
+	display: inline-flex;
+	font-weight: 400;
+	font-size: var(--fs-button);
+	padding: 1rem 2rem;
+	margin-top: 3rem;
+	margin-bottom: 3rem;
+	border-radius: 0.21em;
+	opacity: 1;
+	&:hover {
+		cursor: pointer;
+		opacity: 0.9;
+		-webkit-filter: brightness(108%);
+		filter: brightness(108%);
+		-webkit-transition: all var(--time-slow) ease;
+		-o-transition: all var(--time-slow) ease;
+		transition: all var(--time-slow) ease;
+	}
+	&:active {
+		cursor: pointer;
+		opacity: 1;
+		-webkit-filter: brightness(88%);
+		filter: brightness(88%);
+		-webkit-transition: all var(--time-fast) ease;
+		-o-transition: all var(--time-fast) ease;
+		transition: all var(--time-fast) ease;
+	}
 }
-b {
-	font-weight: bold;
+.btn {
+	display: -webkit-inline-box;
+	display: -ms-inline-flexbox;
+	display: inline-flex;
+	font-weight: 400;
+	font-size: var(--fs-button);
+	padding: 1rem 2rem;
+	margin-top: 3rem;
+	margin-bottom: 3rem;
+	border-radius: 0.21em;
+	opacity: 1;
+	&:hover {
+		cursor: pointer;
+		opacity: 0.9;
+		-webkit-filter: brightness(108%);
+		filter: brightness(108%);
+		-webkit-transition: all var(--time-slow) ease;
+		-o-transition: all var(--time-slow) ease;
+		transition: all var(--time-slow) ease;
+	}
+	&:active {
+		cursor: pointer;
+		opacity: 1;
+		-webkit-filter: brightness(88%);
+		filter: brightness(88%);
+		-webkit-transition: all var(--time-fast) ease;
+		-o-transition: all var(--time-fast) ease;
+		transition: all var(--time-fast) ease;
+	}
+	&:hover.outline {
+		opacity: 0.6;
+	}
 }
+
+/* For filled buttons */
+.filled {
+	border: none;
+	background-color: var(--clr-main-brand-color);
+	color: var(--clr-light-shades);
+}
+
+/* For outlined buttons */
+.outline {
+	border: 0.2rem solid var(--clr-light-shades);
+	color: var(--clr-light-shades);
+	background-color: transparent;
+}
+.no-outline {
+	border: none;
+	color: var(--clr-main-brand-color);
+}
+
+/* Styling the menu / navigation bar */
 .nav-bar {
 	height: 6%;
 	width: 100%;
 	position: fixed;
 	top: 0;
 	z-index: 2;
-	overflow: hidden;
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	-ms-flex-flow: row nowrap;
 	flex-flow: row nowrap;
+	-webkit-box-pack: justify;
+	-ms-flex-pack: justify;
 	justify-content: space-between;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
 	align-items: center;
 	text-align: center;
-	font-weight: 300;
-	transition: all 300ms ease;
+	font-weight: var(--fw-semi-bold);
+	font-size: var(--fs-nav);
 }
 .nav-links {
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	-ms-flex-flow: row nowrap;
 	flex-flow: row nowrap;
+	-webkit-box-pack: space-evenly;
+	-ms-flex-pack: space-evenly;
 	justify-content: space-evenly;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
 	align-items: center;
 	a {
 		padding: 0 3rem 0 3rem;
-		color: rgb(var(--light-shades));
-		font-size: 1.2rem;
+		color: var(--clr-light-shades);
+		font-size: var(--fs-200);
+		-webkit-box-flex: 1;
+		-ms-flex: 1 1 0px;
 		flex: 1 1 0px;
-		&:hover {
-			opacity: 0.8;
-			filter: brightness(85%);
-			transition: all 1s ease;
-		}
 	}
-}
-.login-btn {
-	&:hover {
-		opacity: 0.8;
-		filter: brightness(85%);
-		transition: all 1s ease;
-	}
-	color: rgb(var(--light-shades));
-	font-size: 1.25rem;
-	padding: 0 3rem 0 3rem;
 }
 .logo {
 	height: 2.5rem;
 	width: 2.5rem;
 	margin: 0 3rem 0 3rem;
+	fill: none;
+	.fg {
+		fill: #FFF;
+	}
+}
+.login-btn {
+	color: var(--clr-light-shades);
+	font-size: var(--fs-200);
+	padding: 0 3rem 0 3rem;
 }
 .frosted-opaque {
-	background-color: rgba(var(--overlay-color));
+	background-color: var(--clr-overlay);
+	-webkit-backdrop-filter: saturate(180%) blur(20px);
 	backdrop-filter: saturate(180%) blur(20px);
 }
-.scroll-down {
-	header {
-		transform: translate3d(0, -100%, 0);
-	}
-}
-.scroll-up {
-	header {
-		filter: drop-shadow(0 -10px 20px rgba(var(--overlay-color)));
-	}
-}
+
+
+/* Styling the hero banner */
 .hero-container {
 	height: 100vh;
 	top: 0;
@@ -188,51 +323,42 @@ b {
 	position: relative;
 	background-attachment: fixed;
 	h1 {
-		font-size: 7rem;
-		font-weight: 600;
+		font-size: var(--fs-900);
+		font-weight: var(--fw-bold);
 		width: 100%;
-		color: rgb(var(--light-shades));
+		color: var(--clr-light-shades);
 		text-shadow: black 0 0 0.09em;
 	}
 	h2 {
-		font-size: 4rem;
-		font-weight: 500;
+		font-size: var(--fs-700);
+		font-weight: var(--fw-semi-bold);
 		text-shadow: black 0 0 0.09em;
 	}
 	p {
-		font-size: 1.8rem;
+		font-size: var(--fs-400);
 		width: 100%;
-		color: rgb(var(--light-shades));
+		color: var(--clr-light-shades);
 		text-shadow: black 0 0 0.09em;
 	}
 }
-#home {
-	background-image: url("../images/hero/main.jpg");
-}
-#fitness {
-	background-image: url("../images/hero/fitness.jpg");
-}
-#dieting {
-	background-image: url("../images/hero/dieting.jpg");
-}
-#wellbeing {
-	background-image: url("../images/hero/wellbeing.jpg");
-}
-#fitness2 {
-	background-image: url("../images/hero/create-workout.jpg");
-}
-#fitness3 {
-	background-image: url("../images/hero/choose-workout.jpg");
-}
 .blur {
+	-webkit-backdrop-filter: saturate(100%) blur(3px);
 	backdrop-filter: saturate(100%) blur(3px);
 	background: rgba(31, 31, 31, 0.4);
-	transition: all 300ms ease-in;
+	-webkit-transition: all var(--time-very-slow) ease-in;
+	-o-transition: all var(--time-very-slow) ease-in;
+	transition: all var(--time-very-slow) ease-in;
 	&:hover {
+		-webkit-backdrop-filter: saturate(150%) blur(10px);
 		backdrop-filter: saturate(150%) blur(10px);
 	}
 }
+
+
+/* Scroll content snapping */
 .snapping-container {
+	overflow-y: scroll;
+	-ms-scroll-snap-type: y mandatory;
 	scroll-snap-type: y mandatory;
 }
 .snapping-section {
@@ -240,32 +366,52 @@ b {
 	scroll-snap-stop: always;
 }
 .full-screen {
-	height: 100vh;
+	min-height: 100vh;
 	width: 100vw;
 }
 .full-height {
-	height: 100%;
+	min-height: 100vh;
 }
 .full-width {
 	width: 100%;
 }
 .container {
 	text-align: center;
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-ms-flex-flow: column nowrap;
 	flex-flow: column nowrap;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
 	justify-content: center;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
 	align-items: center;
 }
 .row {
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	-ms-flex-flow: row nowrap;
 	flex-flow: row nowrap;
+	-webkit-box-pack: space-evenly;
+	-ms-flex-pack: space-evenly;
 	justify-content: space-evenly;
 }
 .wrap {
+	-ms-flex-wrap: wrap;
 	flex-wrap: wrap;
 }
 .item {
+	-webkit-box-flex: 1;
+	-ms-flex: 1 1 0px;
 	flex: 1 1 0px;
 }
+
+
+
 input {
 	width: 30rem;
 	padding: 1rem 2rem;
@@ -273,13 +419,16 @@ input {
 	border: none;
 	border-bottom: 2px black solid;
 	background-color: transparent;
-	transition: all 300ms ease;
+	-webkit-transition: all var(--time-very-slow) ease;
+	-o-transition: all var(--time-very-slow) ease;
+	transition: all var(--time-very-slow) ease;
 	&:focus {
 		outline: none;
-		background-color: rgba(var(--overlay-color));
+		background-color: var(--clr-overlay);
 		border-radius: 0.4em;
-		color: rgb(var(--light-shades));
+		color: var(--clr-light-shades);
 	}
+	/* Selects any invalid <input> */
 	&:invalid {
 		color: rgb(154, 62, 62);
 	}
@@ -291,24 +440,30 @@ select {
 	border: none;
 	border-bottom: 2px black solid;
 	background-color: transparent;
-	transition: all 300ms ease;
+	-webkit-transition: all var(--time-very-slow) ease;
+	-o-transition: all var(--time-very-slow) ease;
+	transition: all var(--time-very-slow) ease;
 	&:focus {
 		outline: none;
-		background-color: rgba(var(--overlay-color));
+		background-color: var(--clr-overlay);
 		border-radius: 0.4em;
-		color: rgb(var(--light-shades));
+		color: var(--clr-light-shades);
 	}
 }
+
+
+
+/* Workout tracker */
 .tracker {
-	font-size: 1.4rem;
+	font-size: var(--fs-400);
 	border-collapse: collapse;
 	width: 60rem;
 	th {
-		font-size: 1.15em;
+		font-size: var(--fs-300);
 		text-align: left;
 		font-weight: normal;
-		color: rgb(var(--light-shades));
-		background: rgb(var(--main-brand-color));
+		color: var(--clr-light-shades);
+		background: var(--clr-main-brand-color);
 		padding: 0.75rem;
 	}
 	td {
@@ -325,8 +480,9 @@ select {
 }
 .tracker-date {
 	display: inline-block;
+	-webkit-box-sizing: border-box;
 	box-sizing: border-box;
-	font-size: 1em;
+	font-size: var(--fs-200);
 	height: 2.5em;
 	padding: 0.5em 0;
 	border: none;
@@ -335,8 +491,9 @@ select {
 }
 .tracker-workout {
 	display: inline-block;
+	-webkit-box-sizing: border-box;
 	box-sizing: border-box;
-	font-size: 1em;
+	font-size: var(--fs-200);
 	height: 2.5em;
 	padding: 0.5em 0;
 	border: none;
@@ -345,8 +502,9 @@ select {
 }
 .tracker-duration {
 	display: inline-block;
+	-webkit-box-sizing: border-box;
 	box-sizing: border-box;
-	font-size: 1em;
+	font-size: var(--fs-200);
 	height: 2.5em;
 	padding: 0.5em 0;
 	border: none;
@@ -356,14 +514,20 @@ select {
 	text-align: right;
 }
 .tracker-button {
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
 	align-items: center;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
 	justify-content: center;
 	background: none;
 	border: none;
 	outline: none;
 	color: red;
-	font-size: 1.5em;
+	font-size: var(--fs-400);
 	margin: 0.5em;
 	cursor: pointer;
 	&:hover {
@@ -387,44 +551,9 @@ select {
 		color: rgba(0, 255, 0, 0.3);
 	}
 }
-.btn {
-	display: inline-flex;
-	font-weight: 400;
-	font-size: 1.6rem;
-	padding: 1rem 2rem;
-	margin-top: 3rem;
-	margin-bottom: 3rem;
-	border-radius: 0.21em;
-	&:hover {
-		cursor: pointer;
-		opacity: 0.9;
-		filter: brightness(108%);
-		transition: all 1s ease;
-	}
-	&:active {
-		cursor: pointer;
-		opacity: 1;
-		filter: brightness(88%);
-		transition: all 100ms ease;
-	}
-	&:hover.outline {
-		opacity: 0.6;
-	}
-}
-.filled {
-	border: none;
-	background-color: rgb(var(--main-brand-color));
-	color: rgb(var(--light-shades));
-}
-.outline {
-	border: 0.2rem solid rgb(var(--light-shades));
-	color: rgb(var(--light-shades));
-	background-color: transparent;
-}
-.no-outline {
-	border: none;
-	color: rgb(var(--main-brand-color));
-}
+
+
+/* Other */
 #tool-tip {
 	display: none;
 	position: relative;
@@ -432,14 +561,19 @@ select {
 	margin-top: 1.0rem;
 	text-align: left;
 	h4 {
-		font-size: 1.2rem;
+		font-size: var(--fs-400);
 	}
 	p {
-		font-size: 1.0rem;
+		font-size: var(--fs-200);
 	}
 }
 .valid {
 	b {
 		color: rgb(6, 124, 6);
+	}
+}
+.invalid {
+	b {
+		color: rgb(205, 6, 6);
 	}
 }
